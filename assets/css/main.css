@@ -1823,7 +1823,7 @@ section,
 }
 
 /* Gaya untuk tombol dengan efek modern */
-.btn-modern, .btn-custom {
+#btn-modern, #btn-custom {
   font-size: 16px;
   padding: 12px 30px;
   border-radius: 30px;
@@ -1832,26 +1832,26 @@ section,
 }
 
 /* Tombol Menu Paket Jasa */
-.btn-modern {
+#btn-modern {
   background-color: #4CAF50;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-modern:hover {
+#btn-modern:hover {
   background-color: #45a049;
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Tombol Custom */
-.btn-custom {
+#btn-custom {
   background-color: #ff5722;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-custom:hover {
+#btn-custom:hover {
   background-color: #e64a19;
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
