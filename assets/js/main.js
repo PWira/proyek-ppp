@@ -209,3 +209,21 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+// Add this to your main.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+  const styleButtons = document.querySelectorAll('.style-button');
+  const preview = document.getElementById('preview');
+
+  styleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const style = button.getAttribute('data-style');
+      document.body.className = style;
+    });
+  });
+
+  document.getElementById('finish-button').addEventListener('click', function() {
+    alert('Your selection has been saved!');
+  });
+});
