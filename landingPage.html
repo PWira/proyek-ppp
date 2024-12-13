@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,27 +27,116 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom CSS -->
   <style>
-    .section {
-      display: none;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
     }
-    .selected {
-      display: block;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      width: auto\9; /* ie8 */
-  }
-  </style>
 
-  <!-- =======================================================
-  * Template Name: Gp
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Updated: Aug 15 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #0b0b0b;
+    }
+
+    .container p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      width: calc(33.333% - 20px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #0a0b0b;
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: 14px;
+      color: #fff;
+      background-color: #4CAF50;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    .card .tag.secondary {
+      background-color: #2196F3;
+    }
+
+    .card p {
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .card .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #007BFF;
+    }
+
+    .card .button {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007BFF;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .card .button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body class="starter-page-page">
@@ -80,75 +169,76 @@
   </header>
 
   <main class="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3" style="margin:2vw 0 2vw 0;">
-          <h2>Select a style for your website</h2>
-          <p>You can change your fonts and colors at any time</p>
-          <div class="form-group">
-            <button class="style-button" data-style="minimalistic">Minimalistic</button>
-            <button class="style-button" data-style="modern">Modern</button>
-            <button class="style-button" data-style="fresh">Fresh</button>
-            <button class="style-button" data-style="elegant">Elegant</button>
-            <button class="style-button" data-style="vibrant">Vibrant</button>
-          </div>
-          <button class="btn btn-primary mt-3" id="finish-button">Finish</button>
-        </div>
-        <div class="col-md-9" style="margin:2vw 0 2vw 0;">
-          <div id="preview">
-            <div class="section minimalistic selected">
-              <img src="assets/img/header.png" class="img-fluid" alt="">
-              <img src="assets/img/section1.png" class="img-fluid" alt="">
-              <img src="assets/img/section2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section modern">
-              <img src="assets/img/header2.png" class="img-fluid" alt="">
-              <img src="assets/img/section1-2.png" class="img-fluid" alt="">
-              <img src="assets/img/section2-2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section fresh">
-              <img src="assets/img/header3.png" class="img-fluid" alt="">
-              <img src="assets/img/section1-3.png" class="img-fluid" alt="">
-              <img src="assets/img/section2-3.png" class="img-fluid" alt="">
-            </div>
-            <div class="section elegant">
-              <img src="assets/img/header2.png" class="img-fluid" alt="">
-              <img src="assets/img/section1.png" class="img-fluid" alt="">
-              <img src="assets/img/section1-2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section vibrant">
-              <img src="assets/img/header3.png" class="img-fluid" alt="">
-              <img src="assets/img/section2-2.png" class="img-fluid" alt="">
-              <img src="assets/img/section2-3.png" class="img-fluid" alt="">
-            </div>
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Starter Landing Page</h2>
+        <p>Check Starter Landing Page<br></p>
+      </div><!-- End Section Title -->
+
+    </div>
+      <div class="container" data-aos="fade-up">
+        <div class="container">
+          <h1>Landing Page</h1>
+          <p>Temukan beragam pilihan layanan terbaik yang telah kami sediakan untuk membantu bisnis Anda cepat bertumbuh di pasar <i>Online</i>.</p>
+          <div class="cards">
+              <div class="card">
+                  <h2>Paket Prabu</h2>
+                  <span class="tag">Primer</span>
+                  <span class="tag secondary">Pembuatan Konten</span>
+                  <p class="price">Rp575.000,-</p>
+                  <p>Paket hemat yang membantu mempertahankan posisi website Anda agar tetap mendapatkan trust dari Google.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
+              <div class="card">
+                  <h2>Paket Super</h2>
+                  <span class="tag secondary">Sekunder</span>
+                  <span class="tag">Pembuatan Konten</span>
+                  <p class="price">Rp6.000.000,-</p>
+                  <p>Cocok untuk website bisnis yang ingin meningkatkan kunjungan organik dari mesin pencari Google.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
+              <div class="card">
+                  <h2>Paket Pilar</h2>
+                  <span class="tag secondary">Sekunder</span>
+                  <span class="tag">Pembuatan Konten</span>
+                  <p class="price">Rp820.000,-</p>
+                  <p>Akuisisi peringkat dan tingkatkan kepercayaan calon pelanggan Anda dengan konten berkualitas.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
           </div>
         </div>
       </div>
-    </div>
+
+    </section><!-- /Starter Section Section -->
+
   </main>
-  
+
   <footer id="footer" class="footer dark-background">
 
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">ICE QUILL</span>
-            </a>
-            <div class="footer-contact pt-3">
-              <p>Jl. Jend. Basuki Rachmat No.5, 20 Ilir D II, Kec. Ilir Tim. I </p>
-              <p>Kota Palembang, Sumatera Selatan 30151 </p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+62 877 6829 8867</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
-            </div>
-            <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                  <span class="sitename">ICE QUILL</span>
+                </a>
+                <div class="footer-contact pt-3">
+                  <p>Jl. Jend. Basuki Rachmat No.5, 20 Ilir D II, Kec. Ilir Tim. I </p>
+                  <p>Kota Palembang, Sumatera Selatan 30151 </p>
+                  <p class="mt-3"><strong>Phone:</strong> <span>+62 877 6829 8867</span></p>
+                  <p><strong>Email:</strong> <span>info@example.com</span></p>
+                </div>
+                <div class="social-links d-flex mt-4">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Useful Links</h4>
