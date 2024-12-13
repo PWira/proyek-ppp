@@ -34,6 +34,107 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .container p {
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        width: calc(25% - 20px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card .tag {
+        display: inline-block;
+        font-size: 12px;
+        color: #fff;
+        background-color: #4CAF50;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+
+    .card .tag.secondary {
+        background-color: #2196F3;
+    }
+
+    .card p {
+        color: #666;
+        margin: 10px 0;
+    }
+
+    .card .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .card .button {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007BFF;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .card .button:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card {
+            width: 100%;
+        }
+    }
+</style>
 </head>
 
 <body class="starter-page-page">
@@ -85,7 +186,7 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
+    <!-- <div class="page-title" data-aos="fade">
       <div class="heading">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
@@ -104,7 +205,8 @@
           </ol>
         </div>
       </nav>
-    </div><!-- End Page Title -->
+    </div> -->
+    <!-- End Page Title -->
 
     <!-- Starter Section Section -->
     <section id="starter-section" class="starter-section section">
@@ -116,7 +218,36 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up">
-        <p>Use this page as a starter for your own custom pages.</p>
+        <div class="container">
+          <h1>Paket Hemat UMKM</h1>
+          <p>Temukan beragam pilihan layanan terbaik yang telah kami sediakan untuk membantu bisnis Anda cepat bertumbuh di pasar <i>Online</i>.</p>
+          <div class="cards">
+              <div class="card">
+                  <h2>Paket Prabu</h2>
+                  <span class="tag">Primer</span>
+                  <span class="tag secondary">Pembuatan Konten</span>
+                  <p class="price">Rp575.000,-</p>
+                  <p>Paket hemat yang membantu mempertahankan posisi website Anda agar tetap mendapatkan trust dari Google.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
+              <div class="card">
+                  <h2>Paket Super</h2>
+                  <span class="tag secondary">Sekunder</span>
+                  <span class="tag">Pembuatan Konten</span>
+                  <p class="price">Rp6.000.000,-</p>
+                  <p>Cocok untuk website bisnis yang ingin meningkatkan kunjungan organik dari mesin pencari Google.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
+              <div class="card">
+                  <h2>Paket Pilar</h2>
+                  <span class="tag secondary">Sekunder</span>
+                  <span class="tag">Pembuatan Konten</span>
+                  <p class="price">Rp820.000,-</p>
+                  <p>Akuisisi peringkat dan tingkatkan kepercayaan calon pelanggan Anda dengan konten berkualitas.</p>
+                  <a href="#" class="button">Beli Sekarang</a>
+              </div>
+          </div>
+        </div>
       </div>
 
     </section><!-- /Starter Section Section -->
