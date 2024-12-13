@@ -214,12 +214,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   const styleButtons = document.querySelectorAll('.style-button');
-  const preview = document.getElementById('preview');
+  const sections = document.querySelectorAll('.section');
 
   styleButtons.forEach(button => {
     button.addEventListener('click', function() {
-      const style = button.getAttribute('data-style');
-      document.body.className = style;
+      const selectedStyle = button.getAttribute('data-style');
+      sections.forEach(section => {
+        section.classList.remove('selected');
+        if (section.classList.contains(selectedStyle)) {
+          section.classList.add('selected');
+        }
+      });
     });
   });
 
