@@ -214,15 +214,15 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   const styleButtons = document.querySelectorAll('.style-button');
-  const bagians = document.querySelectorAll('.bagian');
+  const sections = document.querySelectorAll('.section');
 
   styleButtons.forEach(button => {
     button.addEventListener('click', function() {
       const selectedStyle = button.getAttribute('data-style');
-      bagians.forEach(bagian => {
-        bagian.classList.remove('selected');
-        if (bagian.classList.contains(selectedStyle)) {
-          bagian.classList.add('selected');
+      sections.forEach(section => {
+        section.classList.remove('selected');
+        if (section.classList.contains(selectedStyle)) {
+          section.classList.add('selected');
         }
       });
     });
