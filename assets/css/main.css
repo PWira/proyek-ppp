@@ -853,13 +853,15 @@ section,
 .hero .icon-box {
   padding: 30px 20px;
   transition: ease-in-out 0.3s;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border: 1px solid rgba(0, 255, 255, 0.1); /* Ubah warna border menjadi aqua */
   height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .icon-box i {
@@ -878,8 +880,25 @@ section,
 }
 
 .hero .icon-box h3 a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(0, 255, 255, 0.9); /* Ubah warna teks menjadi aqua */
   transition: ease-in-out 0.3s;
+}
+
+.hero .icon-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.1); /* Ubah warna background menjadi aqua */
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.hero .icon-box:hover::before {
+  left: 0;
+  opacity: 1;
 }
 
 .hero .icon-box:hover {
