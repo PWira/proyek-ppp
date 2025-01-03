@@ -43,8 +43,8 @@ https://templatemo.com/tm-570-chain-app-dev
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
       }
-  
-      .floating-sidebar button {
+
+      .floating-sidebar a {
         display: block;
         width: 100%;
         padding: 10px;
@@ -54,9 +54,10 @@ https://templatemo.com/tm-570-chain-app-dev
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        text-decoration: none;
       }
-  
-      .floating-sidebar button:hover {
+
+      .floating-sidebar a:hover {
         background-color: #0056b3;
       }
     </style>
@@ -66,13 +67,12 @@ https://templatemo.com/tm-570-chain-app-dev
 <body>
 
   <div class="floating-sidebar">
-    <button onclick="loadTemplate('template1.html')">Template 1</button>
-    <button onclick="loadTemplate('template2.html')">Template 2</button>
-    <button onclick="loadTemplate('template3.html')">Template 3</button>
-    <button onclick="loadTemplate('template4.html')">Template 4</button>
-    <button onclick="loadTemplate('template5.html')">Template 5</button>
-    <button onclick="loadTemplate('template6.html')">Template 6</button>
-    <button onclick="loadTemplate('index.html')">Back to Home</button>
+    <a href="template1.html" class="btn btn-primary btn-block">Template 1</a>
+    <a href="template2.html" class="btn btn-primary btn-block">Template 2</a>
+    <a href="template3.html" class="btn btn-primary btn-block">Template 3</a>
+    <a href="template4.html" class="btn btn-primary btn-block">Template 4</a>
+    <a href="template5.html" class="btn btn-primary btn-block">Template 5</a>
+    <a href="index.html" class="btn btn-primary btn-block">Back to Home</a>
   </div>
 
   <!-- ***** Preloader Start ***** -->
@@ -765,23 +765,6 @@ https://templatemo.com/tm-570-chain-app-dev
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   
-  <script>
-    function loadTemplate(templatePath) {
-      const templateContent = document.getElementById('template-content');
-      if (templateContent) {
-        // Load the selected template
-        fetch(templatePath)
-          .then(response => response.text())
-          .then(data => {
-            templateContent.innerHTML = data;
-          })
-          .catch(error => {
-            console.error('Error loading template:', error);
-          });
-      } else {
-        console.error('Template content element not found.');
-      }
-    }
-  </script>
+  
 </body>
 </html>
