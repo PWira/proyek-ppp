@@ -500,16 +500,21 @@ http://www.templatemo.com/tm-475-holiday
 	</script>
 	<script>
 		function loadTemplate(templatePath) {
-		  // Load the selected template
-		  fetch(templatePath)
-			.then(response => response.text())
-			.then(data => {
-			  document.getElementById('template-content').innerHTML = data;
-			})
-			.catch(error => {
-			  console.error('Error loading template:', error);
-			});
+		  const templateContent = document.getElementById('template-content');
+		  if (templateContent) {
+			// Load the selected template
+			fetch(templatePath)
+			  .then(response => response.text())
+			  .then(data => {
+				templateContent.innerHTML = data;
+			  })
+			  .catch(error => {
+				console.error('Error loading template:', error);
+			  });
+		  } else {
+			console.error('Template content element not found.');
+		  }
 		}
-	  </script>
+	</script>
  </body>
  </html>

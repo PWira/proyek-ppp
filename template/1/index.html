@@ -764,20 +764,24 @@ https://templatemo.com/tm-570-chain-app-dev
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
-
+  
   <script>
     function loadTemplate(templatePath) {
-      // Load the selected template
-      fetch(templatePath)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('template-content').innerHTML = data;
-        })
-        .catch(error => {
-          console.error('Error loading template:', error);
-        });
+      const templateContent = document.getElementById('template-content');
+      if (templateContent) {
+        // Load the selected template
+        fetch(templatePath)
+          .then(response => response.text())
+          .then(data => {
+            templateContent.innerHTML = data;
+          })
+          .catch(error => {
+            console.error('Error loading template:', error);
+          });
+      } else {
+        console.error('Template content element not found.');
+      }
     }
   </script>
-
 </body>
 </html>
