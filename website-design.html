@@ -38,7 +38,31 @@
       max-width: 100%;
       height: auto;
       width: auto\9; /* ie8 */
-  }
+    }
+    .floating-sidebar {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .floating-sidebar button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .floating-sidebar button:hover {
+      background-color: #0056b3;
+    }
   </style>
 
   <!-- =======================================================
@@ -79,7 +103,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <aside class="">
     <div class="container">
       <div class="row">
         <div class="col-md-3" style="margin:2vw 0 2vw 0;" data-aos="fade-up">
@@ -91,61 +115,13 @@
             <button class="style-button" data-style="fresh">Fresh</button>
             <button class="style-button" data-style="elegant">Elegant</button>
             <button class="style-button" data-style="vibrant">Vibrant</button>
-            <button class="">
-              <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Dropdown 1</a></li>
-                  <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Dropdown 1</a></li>
-                      <li><a href="#">Deep Dropdown 2</a></li>
-                      <li><a href="#">Deep Dropdown 3</a></li>
-                      <li><a href="#">Deep Dropdown 4</a></li>
-                      <li><a href="#">Deep Dropdown 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown 2</a></li>
-                  <li><a href="#">Dropdown 3</a></li>
-                  <li><a href="#">Dropdown 4</a></li>
-                </ul>
-              </li>
-            </button>
           </div>
           <button data-aos="fade-up" class="btn btn-primary mt-3" id="finish-button">Finish</button>
         </div>
-        <div class="col-md-9" style="margin:2vw 0 2vw 0;" data-aos="fade-left">
-          <div id="preview">
-            <div class="section minimalistic selected">
-              <img data-aos="fade-left" src="assets/img/header.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section1.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section modern">
-              <img data-aos="fade-left" src="assets/img/header2.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section1-2.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section2-2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section fresh">
-              <img data-aos="fade-left" src="assets/img/header3.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section1-3.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section2-3.png" class="img-fluid" alt="">
-            </div>
-            <div class="section elegant">
-              <img data-aos="fade-left" src="assets/img/header2.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section1.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section1-2.png" class="img-fluid" alt="">
-            </div>
-            <div class="section vibrant">
-              <img data-aos="fade-left" src="assets/img/header3.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section2-2.png" class="img-fluid" alt="">
-              <img data-aos="fade-left" src="assets/img/section2-3.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </main>
-  
+  </aside>
+
   <footer id="footer" class="footer dark-background">
 
     <div class="footer-top">
@@ -227,6 +203,14 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- Floating Sidebar -->
+  <div class="floating-sidebar">
+    <button onclick="loadTemplate('template/1/index.html')">Template 1</button>
+    <button onclick="loadTemplate('template/2/index.html')">Template 2</button>
+    <button onclick="loadTemplate('template/3/index.html')">Template 3</button>
+    <button onclick="goToHome()">Home</button>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -239,6 +223,25 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Ensure the functions are defined before the buttons are clicked
+    function loadTemplate(templatePath) {
+      fetch(templatePath)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('template-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading template:', error));
+    }
+
+    function goToHome() {
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <!-- Template Container -->
+  <div id="template-container" class="container mt-5"></div>
 
 </body>
 

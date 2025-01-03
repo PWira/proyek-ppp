@@ -23,8 +23,48 @@ http://www.templatemo.com/tm-475-holiday
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  </head>
-  <body class="tm-gray-bg">
+	<style>
+		.floating-sidebar {
+		  position: fixed;
+		  top: 50%;
+		  left: 0;
+		  transform: translateY(-50%);
+		  background-color: #fff;
+		  padding: 10px;
+		  border-radius: 5px;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		  z-index: 1000;
+		}
+	
+		.floating-sidebar button {
+		  display: block;
+		  width: 100%;
+		  padding: 10px;
+		  margin-bottom: 10px;
+		  background-color: #007bff;
+		  color: #fff;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+	
+		.floating-sidebar button:hover {
+		  background-color: #0056b3;
+		}
+	</style>
+
+</head>
+
+<body class="tm-gray-bg">
+	<div class="floating-sidebar">
+		<button onclick="loadTemplate('template/1/index.html')">Template 1</button>
+		<button onclick="loadTemplate('../2/index.html')">Template 2</button>
+		<button onclick="loadTemplate('../3/index.html')">Template 3</button>
+		<button onclick="loadTemplate('../4/index.html')">Template 4</button>
+		<button onclick="loadTemplate('../5/index.html')">Template 5</button>
+		<button onclick="loadTemplate('../6/index.html')">Template 6</button>
+		<button onclick="loadTemplate('../../index.html')">Back to Home</button>
+	</div>
   	<!-- Header -->
   	<div class="tm-header">
   		<div class="container">
@@ -458,5 +498,18 @@ http://www.templatemo.com/tm-475-holiday
 
 	  	});
 	</script>
+	<script>
+		function loadTemplate(templatePath) {
+		  // Load the selected template
+		  fetch(templatePath)
+			.then(response => response.text())
+			.then(data => {
+			  document.getElementById('template-content').innerHTML = data;
+			})
+			.catch(error => {
+			  console.error('Error loading template:', error);
+			});
+		}
+	  </script>
  </body>
  </html>
